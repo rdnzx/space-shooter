@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #canvas {
+            width: 960px;
+            height: 600px;
+            border: 1px solid #000000;
+        }
+    </style>
+    <title>Game Space Runner Javascript</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        window.onload = init();
+
+        function init() {
+            setCanvas()
+            drawGeometry();
+        }
+
+        function setCanvas() {
+            canvas = document.getElementById('canvas')
+
+            cw = canvas.width = 960;
+            ch = canvas.height = 600;
+
+            pen = canvas.getContext('2d')
+            // console.log(pen)
+        }
+
+        function drawGeometry( ) {
+            pen.beginPath();
+            pen.rect(10, 10, 100, 100);
+            pen.fill();
+
+            pen.beginPath();
+            pen.fillStyle = 'skyblue';
+            pen.rect(cw/2-50, 10, 100, 100);
+            pen.fill();
+
+            pen.beginPath();
+            pen.fillStyle = '#e67e22';
+            pen.rect(10, 490, 100, 100);
+            pen.fill();
+            
+            pen.beginPath();
+            pen.fillStyle = '#e67e22';
+            pen.rect(cw/2 - 50, 490, 100, 100);
+            pen.fill();
+            
+            pen.beginPath();
+            pen.fillStyle = '#e67e22';
+            pen.rect(10,ch/2-50, 100, 100);
+            pen.fill();
+
+            pen.beginPath();
+            pen.fillStyle = '#0000FF';
+            pen.rect(850, 490, 100, 100);
+            pen.fill();
+
+            pen.beginPath();
+            pen.fillStyle = '#00FFFF';
+            pen.rect(850, ch/2-50, 100, 100);
+            pen.fill();
+
+            pen.beginPath();
+            pen.strokeStyle = 'red';
+            pen.rect(cw/2 - 50, ch/2 - 50, 100, 100);
+            pen.stroke();
+
+
+            pen.beginPath();
+            pen.fillStyle = '#FFF000';
+            pen.rect(850, 10, 100, 100);
+            pen.fill(); 
+            
+            pen.beginPath();
+            pen.fillStyle = '#FFF000';
+            pen.rect(cw/4-25, ch/4 - 25, 100, 100);
+            pen.fill(); 
+
+            pen.beginPath();
+            pen.fillStyle = 'purple';
+            pen.rect(cw/4-20, ch/4 + 220, 100, 100);
+            pen.fill(); 
+
+            pen.beginPath();
+            pen.fillStyle = 'blue';
+            pen.rect((cw/2) + (cw/4) - 75, ch/4 - 25, 100, 100);
+            pen.fill();
+            
+            pen.beginPath();
+            pen.fillStyle = 'maroon';
+            pen.rect((cw/2) + (cw/4) - 75, ch/2 + 75, 100, 100);
+            pen.fill();
+
+
+            pen.beginPath();
+            pen.rect(cw - 120, 10, 100, 100);
+            pen.fill();
+
+
+        }
+
+
+
+        console.log('Javascript Active');
+    </script>
+</body>
+</html>
