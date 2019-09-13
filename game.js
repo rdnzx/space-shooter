@@ -37,7 +37,7 @@ class Game {
     drawBackground() {
         this.bg.x -= 5;
         if (this.bg.x + this.bg.w <= cw){
-            this.bg.x -= 0;
+            this.bg.x = 0;
         }
         pen.drawImage(
             media.bg,
