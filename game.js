@@ -6,6 +6,8 @@ class Game {
             w: 1920,
             h: 900,
         }
+        this.asteroid = [];
+        this.powerup = [];
     }
 
     animate (callback) {
@@ -14,10 +16,21 @@ class Game {
     run () {
         this.generate();
         this.start();
+
+        this.playAudio();
     }
 
-    generate () {}
+    generate () {
+        this.generateAsteroids();
+    }
 
+    generateAsteroids() {
+            let randomY = Math.abs(Math.floor(Math.random() * ch));
+            this.asteroid.push(new Asteroid(cw, randomY, 50, 50));
+
+            setTimeout(() => { this.generateAsteroids() }, 2000)
+    }
+    
     start () {
         this.animate( () => this.start () );
 
@@ -31,7 +44,9 @@ class Game {
         this.drawBackground();
         pen.drawImage(media.plane, 10,(ch / 2 - 50), 100, 100);
         
-
+        this.asteroid.forEach(asteroid => {
+            asteroid.draw();
+        })
 
     }
     drawBackground() {
@@ -47,5 +62,6 @@ class Game {
             this.bg.h
         );
     }
+
     update () {}
 }

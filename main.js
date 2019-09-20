@@ -24,4 +24,10 @@ function setMedia(){
     
     media.bg = new Image();
     media.bg.src = 'source/PNG/background.png';
+
+    media.asteroid = new Image();
+    media.asteroid.src = 'source/PNG/asteroid.png';
+
+    media.powerup = new Image();
+    media.powerup.src = 'source/PNG/powerup.png';
 }
