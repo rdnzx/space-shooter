@@ -1,3 +1,1 @@
-# Game_space_shooter
-
-Powered By RadianID
+# Space Shooter Game
